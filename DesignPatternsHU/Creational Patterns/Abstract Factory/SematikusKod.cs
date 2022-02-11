@@ -10,7 +10,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     class MainApp
     {
         /// <summary>
-        /// Entry point into console application.
+        /// Belépési pont a console alkalmazásba.
         /// </summary>
 
         public static void Main()
@@ -27,14 +27,12 @@ namespace DoFactory.GangOfFour.Abstract.Structural
             Client client2 = new Client(factory2);
             client2.Run();
 
-            // Wait for user input
-
             Console.ReadKey();
         }
     }
 
     /// <summary>
-    /// The 'AbstractFactory' abstract class
+    /// Az 'AbstractFactory' abstract osztálya
     /// </summary>
 
     abstract class AbstractFactory
@@ -45,7 +43,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
 
 
     /// <summary>
-    /// The 'ConcreteFactory1' class
+    /// A 'ConcreteFactory1' osztály
     /// </summary>
 
     class ConcreteFactory1 : AbstractFactory
@@ -61,7 +59,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'ConcreteFactory2' class
+    /// A 'ConcreteFactory2' osztály
     /// </summary>
 
     class ConcreteFactory2 : AbstractFactory
@@ -77,7 +75,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'AbstractProductA' abstract class
+    /// Az 'AbstractProductA' abstract osztály
     /// </summary>
 
     abstract class AbstractProductA
@@ -85,7 +83,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'AbstractProductB' abstract class
+    /// Az 'AbstractProductB' abstract osztály
     /// </summary>
 
     abstract class AbstractProductB
@@ -95,7 +93,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
 
 
     /// <summary>
-    /// The 'ProductA1' class
+    /// A 'ProductA1' osztály
     /// </summary>
 
     class ProductA1 : AbstractProductA
@@ -103,7 +101,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'ProductB1' class
+    /// A 'ProductB1' osztály
     /// </summary>
 
     class ProductB1 : AbstractProductB
@@ -116,7 +114,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'ProductA2' class
+    /// A 'ProductA2' osztály
     /// </summary>
 
     class ProductA2 : AbstractProductA
@@ -124,7 +122,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'ProductB2' class
+    /// A 'ProductB2' osztály
     /// </summary>
 
     class ProductB2 : AbstractProductB
@@ -137,7 +135,7 @@ namespace DoFactory.GangOfFour.Abstract.Structural
     }
 
     /// <summary>
-    /// The 'Client' class. Interaction environment for the products.
+    /// A 'Client' osztály. Együtműködési környezet a termékekhez.
     /// </summary>
 
     class Client
@@ -145,7 +143,6 @@ namespace DoFactory.GangOfFour.Abstract.Structural
         private AbstractProductA _abstractProductA;
         private AbstractProductB _abstractProductB;
 
-        // Constructor
 
         public Client(AbstractFactory factory)
         {

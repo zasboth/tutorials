@@ -3,31 +3,30 @@ using System;
 namespace DoFactory.GangOfFour.Abstract.RealWorld
 {
     /// <summary>
-    /// MainApp startup class for Real-World
+    /// MainApp startup ostály Real-World számára
     /// Abstract Factory Design Pattern.
     /// </summary>
 
     class MainApp
     {
         /// <summary>
-        /// Entry point into console application.
+        /// Belépési pont console alkalmazásba.
         /// </summary>
 
         public static void Main()
         {
-            // Create and run the African animal world
+            // Létrehozza és futtatja az Afrika állatvilágát
 
             ContinentFactory africa = new AfricaFactory();
             AnimalWorld world = new AnimalWorld(africa);
             world.RunFoodChain();
 
-            // Create and run the American animal world
+            // Létrehozza és futtatja Amerika allatvilágát
 
             ContinentFactory america = new AmericaFactory();
             world = new AnimalWorld(america);
             world.RunFoodChain();
 
-            // Wait for user input
 
             Console.ReadKey();
         }
@@ -35,7 +34,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
 
 
     /// <summary>
-    /// The 'AbstractFactory' abstract class
+    /// Maga az 'AbstractFactory' abstract osztálya
     /// </summary>
 
     abstract class ContinentFactory
@@ -45,7 +44,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ConcreteFactory1' class
+    /// Leszármaztatott osztály Afrika
     /// </summary>
 
     class AfricaFactory : ContinentFactory
@@ -61,7 +60,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ConcreteFactory2' class
+    /// Leszármaztatott osztály Amerika
     /// </summary>
 
     class AmericaFactory : ContinentFactory
@@ -77,7 +76,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'AbstractProductA' abstract class
+    /// Az 'AbstractProductA' abstract osztály
     /// </summary>
 
     abstract class Herbivore
@@ -85,7 +84,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'AbstractProductB' abstract class
+    /// Az 'AbstractProductB' abstract osztály
     /// </summary>
 
     abstract class Carnivore
@@ -94,7 +93,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ProductA1' class
+    /// A 'ProductA1' osztály gnú
     /// </summary>
 
     class Wildebeest : Herbivore
@@ -102,14 +101,14 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ProductB1' class
+    /// A 'ProductB1' osztály oroszlán
     /// </summary>
 
     class Lion : Carnivore
     {
         public override void Eat(Herbivore h)
         {
-            // Eat Wildebeest
+            // Gnút eszik
 
             Console.WriteLine(this.GetType().Name +
               " eats " + h.GetType().Name);
@@ -117,7 +116,7 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ProductA2' class
+    /// A 'ProductA2' osztály bölény
     /// </summary>
 
     class Bison : Herbivore
@@ -125,14 +124,14 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'ProductB2' class
+    /// A 'ProductB2' osztály farkas
     /// </summary>
 
     class Wolf : Carnivore
     {
         public override void Eat(Herbivore h)
         {
-            // Eat Bison
+            // A farkas bölényt eszik
 
             Console.WriteLine(this.GetType().Name +
               " eats " + h.GetType().Name);
@@ -140,15 +139,13 @@ namespace DoFactory.GangOfFour.Abstract.RealWorld
     }
 
     /// <summary>
-    /// The 'Client' class 
+    /// A 'Client' osztály állatvilág 
     /// </summary>
 
     class AnimalWorld
     {
         private Herbivore _herbivore;
         private Carnivore _carnivore;
-
-        // Constructor
 
         public AnimalWorld(ContinentFactory factory)
         {
